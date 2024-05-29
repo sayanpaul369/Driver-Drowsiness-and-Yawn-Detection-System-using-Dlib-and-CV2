@@ -17,9 +17,9 @@ import pyttsx3  # Import pyttsx3 for text-to-speech synthesis
 
 # Function to send an email
 def send_email(subject, body):
-    sender_email = "sayanpaul369@gmail.com"
-    receiver_email = "rajp68354@gmail.com"
-    password = "vqhj yksi wkob ndvt"
+    sender_email = "SENDER_EMAIL"
+    receiver_email = "RECEIVER_EMAIL"
+    password = "SENDER_EMAIL_PASSWORD"
 
     msg = MIMEMultipart()
     msg['From'] = sender_email
@@ -42,14 +42,14 @@ def send_email(subject, body):
 
 # Function to make a call using Twilio
 def make_call():
-    account_sid = 'ACcbab10afe34b813e5a377b1d552e8fd0'
-    auth_token = '03931dbb676c88a7dcdff6bc7f4f2d2b'
+    account_sid = 'YOUR_ACCOUNT_SID'
+    auth_token = 'YOUR_AUTH_TOKEN'
     client = Client(account_sid, auth_token)
 
     call = client.calls.create(
         twiml='<Response><Say>Your attention is needed, drowsiness detected!</Say></Response>',
-        to='+919804957595',
-        from_='+15515505746'
+        to='RECEIVER_NO',
+        from_='YOUR_TWILIO_REG.NO.'
     )
 
     print(f"Call initiated: {call.sid}")
